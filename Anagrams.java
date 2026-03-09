@@ -92,4 +92,31 @@ String inputfile = args[0];
                             anagramlist += " " + word;
                         }
                     }
-//commit to changes                 
+//commit to changes   
+                   f.println(anagramlist + "\\\\");
+
+                    for (int repeat = 0; repeat < list.size() - 1; repeat++) {
+
+                        int space = anagramlist.indexOf(' ');
+                        anagramlist = anagramlist.substring(space + 1) + " " + anagramlist.substring(0, space);
+
+                        f.println(anagramlist + "\\\\");
+                    }
+                }
+            }
+
+            f.close();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        } 
+          System("sort anagrams > anagrams.sorted");
+
+        try {
+
+            BufferedReader asf = new BufferedReader(new FileReader("anagrams.sorted"));
+            PrintWriter asftex = new PrintWriter(new FileWriter("latex/theAnagrams.tex"));
+
+            String letter = "X";
+            String lemma;
+//commit to changes  
