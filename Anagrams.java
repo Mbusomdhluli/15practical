@@ -56,3 +56,21 @@ String inputfile = args[0];
                 }
             }
             // commit 
+             f.close();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        HashMap<String, ArrayList<String>> A = new HashMap<>();
+
+        for (String w : D.keySet()) {
+            String a = signature(w);
+
+            if (!A.containsKey(a)) {
+                A.put(a, new ArrayList<>());
+            }
+            A.get(a).add(w);
+        } 
+        //commit 
+                 
