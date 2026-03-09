@@ -120,3 +120,28 @@ String inputfile = args[0];
             String letter = "X";
             String lemma;
 //commit to changes  
+            while ((lemma = asf.readLine()) != null) {
+
+                char initial = lemma.charAt(0);
+
+                if (Character.toLowerCase(initial) != Character.toLowerCase(letter.charAt(0))) {
+                    letter = String.valueOf(initial);
+
+                    asftex.println("\n\\vspace{14pt}\n\\noindent\\textbf{\\Large " 
+                    + Character.toUpperCase(initial) + "}\\\\*[+12pt]");
+                }
+
+                asftex.println(lemma);
+            }
+
+            asf.close();
+            asftex.close();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        System("rm anagrams anagrams.sorted");
+    }
+}
+//commit changes 
