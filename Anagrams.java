@@ -73,4 +73,23 @@ String inputfile = args[0];
             A.get(a).add(w);
         } 
         //commit 
-                 
+         try {
+
+            PrintWriter f = new PrintWriter(new FileWriter("anagrams"));
+
+            for (String key : A.keySet()) {
+
+                ArrayList<String> list = A.get(key);
+
+                if (list.size() > 1) {
+
+                    String anagramlist = "";
+
+                    for (String word : list) {
+                        if (anagramlist.equals("")) {
+                            anagramlist = word;
+                        } else {
+                            anagramlist += " " + word;
+                        }
+                    }
+//commit to changes                 
